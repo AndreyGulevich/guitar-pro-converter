@@ -1,0 +1,50 @@
+{
+  "name": "guitar-pro-converter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Локальная конвертация Guitar Pro в MIDI",
+  "author": "Guitar Pro конвертер",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/licenses.mjs && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "electron": "npm run build && electron .",
+    "package": "npm run build && electron-builder --mac dir --arm64",
+    "test": "node --test scripts/converter.test.mjs",
+    "test:ui": "node scripts/ui-test.mjs",
+    "test:electron": "node scripts/ui-test.mjs --electron"
+  },
+  "build": {
+    "appId": "local.guitarpro.converter",
+    "productName": "Guitar Pro конвертер",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json",
+      "THIRD_PARTY_NOTICES.md"
+    ],
+    "mac": {
+      "target": "dir",
+      "category": "public.app-category.music",
+      "identity": null
+    }
+  },
+  "dependencies": {
+    "@breezystack/lamejs": "^1.2.7",
+    "@coderline/alphatab": "1.8.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "electron": "^44.3.0",
+    "electron-builder": "^26.0.0",
+    "midi-file": "^1.2.4",
+    "playwright": "^1.55.0",
+    "vite": "^7.0.0"
+  }
+}
