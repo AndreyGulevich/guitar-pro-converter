@@ -1,6 +1,6 @@
 # Публикация
 
-Адрес: https://guitar-pro-converter.eva-chat.ru
+Публикация сайта приостановлена. DNS и TLS не настроены. Планируемый адрес: https://guitar-pro-converter.eva-chat.ru
 Исходники: https://github.com/AndreyGulevich/guitar-pro-converter
 
 Это отдельный статический сайт Nginx на сервере eva-chat.ru. Файлы Eva Chat и papalam не используются и не заменяются. Обработка музыки остаётся в браузере.
